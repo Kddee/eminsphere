@@ -15,7 +15,7 @@ const proceedingsList = [
 ];
 
 const RecentConferenceProceedings = () => (
-  <div className="min-h-screen bg-background flex flex-col font-body">
+  <div className="min-h-screen page-past-conferences flex flex-col font-body">
     <Header />
     <main className="flex-1 max-w-4xl mx-auto w-full px-4 py-16 md:py-24">
       <div className="text-center mb-14">

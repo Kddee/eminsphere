@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import { Menu, X, Search, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, Phone } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { companyInfo } from "../data/eminsphereData";
 
@@ -54,16 +54,19 @@ const moreLinks = [
 const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [moreOpen, setMoreOpen] = useState(false);
-  const [mobileMoreOpen, setMobileMoreOpen] = useState(false);
-  const [searchOpen, setSearchOpen] = useState(false);
-  const [searchQuery, setSearchQuery] = useState("");
+  const [scrolled, setScrolled] = useState(false);
   const moreRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
 
   useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 60);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
     setMobileOpen(false);
     setMoreOpen(false);
-    setMobileMoreOpen(false);
   }, [location.pathname]);
 
   useEffect(() => {
@@ -77,225 +80,215 @@ const Header = () => {
   }, []);
 
   const linkItems = moreLinks.filter((l) => l.to);
-  const searchRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const handleClickOutsideSearch = (e: MouseEvent) => {
-      if (searchRef.current && !searchRef.current.contains(e.target as Node)) {
-        setSearchOpen(false);
-      }
-    };
-    if (searchOpen) {
-      document.addEventListener("mousedown", handleClickOutsideSearch);
-    }
-    return () => document.removeEventListener("mousedown", handleClickOutsideSearch);
-  }, [searchOpen]);
+  // On home page: navbar is transparent over the dark hero until scrolled
+  const isHome = location.pathname === "/";
+  const transparent = isHome && !scrolled;
 
   return (
-    <header className="w-full" id="top">
-      <div className="h-1 bg-primary" />
+    <header className="fixed top-0 left-0 right-0 z-50 w-full" id="top">
 
-      <div className="relative w-full bg-white/95 backdrop-blur-sm py-6 md:py-8 border-b border-border">
-        <div className="relative z-10 max-w-7xl mx-auto flex items-center justify-between px-4 md:px-8 gap-4">
-          {/* Logo on Left */}
-          <Link to="/" className="flex-shrink-0">
-            <img src="/assets/company logo .png" alt="Eminsphere Logo" className="h-20 md:h-24 w-auto" />
-          </Link>
-
-          {/* Company Info Center */}
-          <div className="flex-1 text-center">
-            <h1 className="font-display text-3xl md:text-4xl font-bold text-foreground tracking-tight">{companyInfo.name}</h1>
-            <p className="text-sm md:text-base text-muted-foreground font-body mt-1">{companyInfo.tagline}</p>
+      {/* ── Top info bar ── */}
+      <div className={`hidden md:block transition-all duration-300 overflow-hidden ${
+        scrolled ? "max-h-0 opacity-0" : "max-h-10 opacity-100"
+      } ${transparent ? "bg-[#070e1d]/80 backdrop-blur-sm" : "bg-[#070e1d]"}`}>
+        <div className="max-w-7xl mx-auto h-10 flex items-center justify-between px-6 text-[11px] font-medium uppercase tracking-wider text-white/60">
+          <div className="flex items-center gap-5">
+            <span className="flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse" />
+              ISO 9001:2015 Certified Organization
+            </span>
+            <span className="text-white/20">|</span>
+            <span>Global Academic, Research &amp; Innovation Platform</span>
           </div>
-
-          {/* Certifications on Right */}
-          <div className="flex-shrink-0 flex items-center gap-3 md:gap-4">
-            <div className="hidden md:flex flex-col text-right text-xs md:text-sm pr-3 border-r border-border">
-              <p className="font-semibold text-foreground">{companyInfo.certifications[0].name}</p>
-              <p className="text-muted-foreground text-xs">Quality Management System</p>
-              <p className="text-muted-foreground text-xs">Certification issued by an</p>
-              <p className="text-muted-foreground text-xs">accredited certification body</p>
-            </div>
-            <div className="flex items-center gap-2">
-              {companyInfo.certifications.map((cert, idx) => (
-                <div key={idx} className="w-14 h-14 md:w-16 md:h-16 flex-shrink-0 flex items-center justify-center bg-card rounded shadow-sm border border-border p-1 hover:shadow-md transition">
-                  <img 
-                    src={cert.badge} 
-                    alt={cert.name} 
-                    title={cert.name}
-                    className="w-full h-full object-contain"
-                    onError={(e) => {
-                      const img = e.target as HTMLImageElement;
-                      img.style.display = "block";
-                      img.parentElement!.className += " bg-muted";
-                    }}
-                  />
-                </div>
-              ))}
-            </div>
+          <div className="flex items-center gap-5">
+            <Link to="/article-submissions" className="hover:text-white transition-colors">Submit Article</Link>
+            <Link to="/registration" className="hover:text-white transition-colors">Register Now</Link>
+            <Link to="/career" className="hover:text-white transition-colors">Careers</Link>
           </div>
         </div>
       </div>
 
-      <nav className="bg-card border-b border-border shadow-sm">
-        <div className="max-w-6xl mx-auto flex items-center justify-between px-4">
-          <div className="hidden md:flex items-center">
+      {/* ── Main navbar ── */}
+      <nav className={`transition-all duration-300 ${
+        scrolled
+          ? "bg-white shadow-md border-b border-slate-200 py-3"
+          : transparent
+            ? "bg-transparent py-4"
+            : "bg-white border-b border-slate-200 py-4"
+      }`}>
+        <div className="max-w-7xl mx-auto flex items-center justify-between px-4 md:px-6">
+
+          {/* Logo */}
+          <Link to="/" className="flex items-center gap-3 group flex-shrink-0">
+            <div className={`rounded-lg p-1 transition-all border ${
+              transparent
+                ? "bg-white/10 border-white/20 group-hover:border-white/40"
+                : "bg-slate-50 border-slate-200 group-hover:border-blue-300"
+            }`}>
+              <img
+                src="/assets/company logo .png"
+                alt="Eminsphere"
+                className="h-10 w-auto object-contain"
+              />
+            </div>
+            <div>
+              <div className={`text-xl font-black leading-none transition-colors ${
+                transparent ? "text-white group-hover:text-blue-200" : "text-[#0f1b35] group-hover:text-[#2563eb]"
+              }`}>
+                Eminsphere<span className="text-[#2563eb]">™</span>
+              </div>
+              <div className={`text-[10px] font-bold uppercase tracking-[0.18em] leading-none mt-0.5 ${
+                transparent ? "text-white/50" : "text-slate-400"
+              }`}>
+                Innovation Hub
+              </div>
+            </div>
+          </Link>
+
+          {/* Desktop nav links */}
+          <div className="hidden lg:flex items-center gap-1">
             {navLinks.map((link) => (
               <Link
                 key={link.label}
                 to={link.to}
-                className={`px-5 py-3.5 text-sm font-semibold transition-colors font-body border-b-2 ${
-                  location.pathname === link.to ? "text-accent border-accent" : "text-primary border-transparent hover:text-accent hover:border-accent"
+                className={`relative px-4 py-2 text-sm font-semibold rounded-md transition-all ${
+                  location.pathname === link.to
+                    ? transparent
+                      ? "text-white bg-white/10"
+                      : "text-[#2563eb] bg-blue-50"
+                    : transparent
+                      ? "text-white/80 hover:text-white hover:bg-white/10"
+                      : "text-[#1a3a6e] hover:text-[#2563eb] hover:bg-slate-50"
                 }`}
               >
                 {link.label}
+                {location.pathname === link.to && (
+                  <span className="absolute bottom-0 left-2 right-2 h-0.5 bg-[#2563eb] rounded-full" />
+                )}
               </Link>
             ))}
 
+            {/* Discover dropdown */}
             <div className="relative" ref={moreRef}>
               <button
+                onMouseEnter={() => setMoreOpen(true)}
                 onClick={() => setMoreOpen(!moreOpen)}
-                className={`flex items-center gap-1 px-5 py-3.5 text-sm font-semibold transition-colors font-body border-b-2 ${
-                  linkItems.some((l) => location.pathname === l.to) ? "text-accent border-accent" : "text-primary border-transparent hover:text-accent hover:border-accent"
+                className={`flex items-center gap-1.5 px-4 py-2 text-sm font-semibold rounded-md transition-all ${
+                  linkItems.some((l) => location.pathname === l.to)
+                    ? transparent ? "text-white bg-white/10" : "text-[#2563eb] bg-blue-50"
+                    : transparent
+                      ? "text-white/80 hover:text-white hover:bg-white/10"
+                      : "text-[#1a3a6e] hover:text-[#2563eb] hover:bg-slate-50"
                 }`}
               >
-                More
-                <ChevronDown className={`w-4 h-4 transition-transform ${moreOpen ? "rotate-180" : ""}`} />
+                Discover
+                <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${moreOpen ? "rotate-180" : ""}`} />
               </button>
+
               {moreOpen && (
-                <div className="absolute top-full right-0 md:left-0 mt-0 w-72 bg-card border border-border rounded-md shadow-lg z-50 max-h-[70vh] overflow-y-auto">
-                  {moreLinks.map((link, i) => {
-                    if (link.label === "divider") {
-                      return <div key={i} className="border-t border-border my-1" />;
-                    }
-                    if ((link as any).heading) {
+                <div
+                  onMouseLeave={() => setMoreOpen(false)}
+                  className="absolute top-full left-0 mt-1.5 w-[520px] bg-white border border-slate-200 rounded-xl shadow-2xl z-50 overflow-hidden"
+                >
+                  <div className="grid grid-cols-2 p-4 max-h-[72vh] overflow-y-auto gap-1">
+                    {moreLinks.map((link, i) => {
+                      if (link.label === "divider") {
+                        return <div key={i} className="col-span-2 border-t border-slate-100 my-1" />;
+                      }
+                      if ((link as any).heading) {
+                        return (
+                          <div key={i} className="col-span-2 px-3 pt-3 pb-1 text-[10px] font-black text-[#2563eb] uppercase tracking-widest">
+                            {link.label}
+                          </div>
+                        );
+                      }
                       return (
-                        <div key={i} className="px-4 py-2 text-xs font-bold text-muted-foreground uppercase tracking-wider bg-muted/50">
+                        <Link
+                          key={link.label}
+                          to={link.to!}
+                          className={`px-3 py-2.5 text-[13px] rounded-lg transition-all font-medium ${
+                            location.pathname === link.to
+                              ? "text-[#2563eb] bg-blue-50"
+                              : "text-[#1a3a6e] hover:bg-slate-50 hover:text-[#2563eb]"
+                          }`}
+                        >
                           {link.label}
-                        </div>
+                        </Link>
                       );
-                    }
-                    return (
-                      <Link
-                        key={link.label}
-                        to={link.to!}
-                        className={`block px-4 py-2.5 text-sm transition-colors font-body ${
-                          location.pathname === link.to ? "text-accent bg-muted" : "text-foreground hover:bg-muted hover:text-primary"
-                        }`}
-                      >
-                        {link.label}
-                      </Link>
-                    );
-                  })}
+                    })}
+                  </div>
+                  <div className="px-5 py-3 bg-slate-50 border-t border-slate-100 flex items-center justify-between">
+                    <p className="text-xs text-slate-400 font-medium">Browse all Eminsphere services</p>
+                    <Link to="/expert-connect" className="text-xs font-bold text-[#2563eb] hover:underline">
+                      Expert Connect →
+                    </Link>
+                  </div>
                 </div>
               )}
             </div>
           </div>
 
-          <div className="relative">
-            <button 
-              onClick={(e) => {
-                e.preventDefault();
-                setSearchOpen(!searchOpen);
-              }}
-              type="button"
-              className="hidden md:flex items-center gap-2 text-muted-foreground hover:text-foreground transition cursor-pointer px-3 py-2 rounded-md hover:bg-muted/50"
+          {/* Right CTA */}
+          <div className="flex items-center gap-3">
+            <Link
+              to="/registration"
+              className={`hidden md:inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-bold transition-all active:scale-95 ${
+                transparent
+                  ? "bg-white/10 border border-white/30 text-white hover:bg-white hover:text-[#0f1b35] backdrop-blur-sm"
+                  : "bg-[#2563eb] text-white hover:bg-[#1a3a6e] shadow-md hover:shadow-lg"
+              }`}
             >
-              <span className="text-sm font-medium">Search</span>
-              <Search className="w-4 h-4" />
+              Submit Paper
+            </Link>
+            <button
+              className={`lg:hidden p-2 rounded-lg transition-colors ${
+                transparent ? "text-white hover:bg-white/10" : "text-[#0f1b35] hover:bg-slate-100"
+              }`}
+              onClick={() => setMobileOpen(!mobileOpen)}
+            >
+              {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
-
-            {searchOpen && (
-              <div ref={searchRef} className="absolute top-full right-0 mt-2 w-72 bg-card border border-border rounded-lg shadow-xl z-50">
-                <input
-                  type="text"
-                  placeholder="Search conferences, proceedings..."
-                  value={searchQuery}
-                  onChange={(e) => {
-                    setSearchQuery(e.target.value);
-                  }}
-                  onKeyDown={(e) => {
-                    if (e.key === "Escape") {
-                      setSearchOpen(false);
-                      setSearchQuery("");
-                    }
-                  }}
-                  autoFocus
-                  className="w-full px-4 py-2 border-b border-border focus:outline-none bg-card text-foreground"
-                />
-                {searchQuery && (
-                  <div className="max-h-96 overflow-y-auto">
-                    {moreLinks
-                      .filter((l) => l.to && l.label.toLowerCase().includes(searchQuery.toLowerCase()))
-                      .map((link) => (
-                        <Link
-                          key={link.label}
-                          to={link.to!}
-                          onClick={() => {
-                            setSearchOpen(false);
-                            setSearchQuery("");
-                          }}
-                          className="block px-4 py-2.5 text-sm font-body text-foreground hover:bg-muted hover:text-primary transition"
-                        >
-                          {link.label}
-                        </Link>
-                      ))}
-                  </div>
-                )}
-              </div>
-            )}
           </div>
-
-          <button className="md:hidden p-3 text-foreground" onClick={() => setMobileOpen(!mobileOpen)}>
-            {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
         </div>
 
+        {/* Mobile menu */}
         {mobileOpen && (
-          <div className="md:hidden border-t border-border max-h-[70vh] overflow-y-auto">
-            {navLinks.map((link) => (
-              <Link
-                key={link.label}
-                to={link.to}
-                className={`block px-6 py-3 text-sm font-semibold font-body ${
-                  location.pathname === link.to ? "text-accent bg-muted" : "text-primary hover:bg-muted"
-                }`}
-              >
-                {link.label}
-              </Link>
-            ))}
-            <button
-              onClick={() => setMobileMoreOpen(!mobileMoreOpen)}
-              className="flex items-center justify-between w-full px-6 py-3 text-sm font-semibold text-primary hover:bg-muted font-body"
-            >
-              More
-              <ChevronDown className={`w-4 h-4 transition-transform ${mobileMoreOpen ? "rotate-180" : ""}`} />
-            </button>
-            {mobileMoreOpen && (
-              <div className="bg-muted/50">
-                {moreLinks.map((link, i) => {
-                  if (link.label === "divider") return <div key={i} className="border-t border-border my-1" />;
-                  if ((link as any).heading) {
-                    return (
-                      <div key={i} className="px-10 py-2 text-xs font-bold text-muted-foreground uppercase tracking-wider">
-                        {link.label}
-                      </div>
-                    );
-                  }
-                  return (
-                    <Link
-                      key={link.label}
-                      to={link.to!}
-                      className={`block px-10 py-2.5 text-sm font-body ${
-                        location.pathname === link.to ? "text-accent" : "text-foreground hover:text-primary hover:bg-muted"
-                      }`}
-                    >
-                      {link.label}
-                    </Link>
-                  );
-                })}
+          <div className="lg:hidden border-t border-slate-100 bg-white max-h-[80vh] overflow-y-auto shadow-2xl">
+            <div className="flex flex-col p-4 gap-1">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.label}
+                  to={link.to}
+                  className={`px-4 py-3 rounded-lg text-sm font-bold transition-all ${
+                    location.pathname === link.to
+                      ? "text-[#2563eb] bg-blue-50"
+                      : "text-[#1a3a6e] hover:bg-slate-50"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              ))}
+              <div className="h-px bg-slate-100 my-2" />
+              <p className="px-4 py-1 text-[10px] font-black text-[#2563eb] uppercase tracking-widest">More Services</p>
+              {moreLinks.map((link, i) => {
+                if (link.label === "divider" || (link as any).heading) return null;
+                return (
+                  <Link
+                    key={link.label}
+                    to={link.to!}
+                    className="px-4 py-2.5 rounded-lg text-sm font-medium text-[#1a3a6e] hover:bg-slate-50 hover:text-[#2563eb] transition-all"
+                  >
+                    {link.label}
+                  </Link>
+                );
+              })}
+              <div className="mt-3 pt-3 border-t border-slate-100">
+                <Link to="/registration" className="btn-primary w-full justify-center">
+                  Submit Paper
+                </Link>
               </div>
-            )}
+            </div>
           </div>
         )}
       </nav>

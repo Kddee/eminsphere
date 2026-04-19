@@ -1,21 +1,472 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  min-height: 100vh;
+  background: linear-gradient(
+    135deg,
+    #e8f0f7 0%,
+    #dce9f5 25%,
+    #d4e5f2 50%,
+    #e0e8f0 75%,
+    #e8f0f7 100%
+  );
 }
 
+/* Sophisticated International Theme - Professional Palette */
+:root {
+  /* European Elegance - Muted Blues */
+  --eu-gradient: linear-gradient(135deg, #2c5282 0%, #3182ce 100%);
+  
+  /* Asian Heritage - Refined Tones */
+  --asia-gradient: linear-gradient(135deg, #744210 0%, #9a6b2c 100%);
+  
+  /* Americas Professional - Subdued Colors */
+  --americas-gradient: linear-gradient(135deg, #2c5282 0%, #c53030 100%);
+  
+  /* Middle East & Africa - Warm Professional */
+  --mea-gradient: linear-gradient(135deg, #9a6b2c 0%, #7c2d12 100%);
+}
+
+/* Navigation & Header Sections - Sophisticated */
+header, nav {
+  background: linear-gradient(
+    90deg,
+    rgba(30, 58, 95, 0.94) 0%,
+    rgba(38, 102, 193, 0.94) 50%,
+    rgba(30, 58, 95, 0.94) 100%
+  );
+  backdrop-filter: blur(15px);
+  box-shadow: 0 6px 40px rgba(30, 58, 95, 0.25);
+}
+
+/* Main Content Areas - Clean & Professional */
+main, .main-content {
+  background: linear-gradient(
+    to bottom,
+    rgba(248, 250, 252, 0.99) 0%,
+    rgba(240, 249, 255, 0.97) 50%,
+    rgba(248, 250, 252, 0.99) 100%
+  );
+  position: relative;
+  z-index: 1;
+}
+
+/* Page-Specific Refined Backgrounds */
+.page-home {
+  background: linear-gradient(
+    135deg,
+    #e8f0f7 0%,
+    rgba(220, 233, 245, 0.95) 35%,
+    rgba(232, 228, 240, 0.98) 70%,
+    #e8f0f7 100%
+  );
+  position: relative;
+  overflow: hidden;
+}
+
+.page-home::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  left: -10%;
+  right: -10%;
+  bottom: -20%;
+  background: 
+    radial-gradient(ellipse 1800px 1200px at 20% 30%, rgba(37, 99, 235, 0.3) 0%, transparent 40%),
+    radial-gradient(ellipse 1600px 1000px at 80% 70%, rgba(30, 58, 95, 0.25) 0%, transparent 45%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Upcoming Conferences - Warm Professional Tone */
+.page-upcoming-conferences {
+  background: linear-gradient(
+    135deg,
+    #f5efea 0%,
+    #ede5dd 35%,
+    #f8f4ef 70%,
+    #f5efea 100%
+  );
+}
+
+.page-upcoming-conferences::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(ellipse 1600px 1100px at 50% 40%, rgba(160, 115, 61, 0.25) 0%, transparent 50%);
+  opacity: 0.7;
+  z-index: -1;
+}
+
+/* Past Conferences - Cool Professional Tone */
+.page-past-conferences {
+  background: linear-gradient(
+    135deg,
+    #dce9f5 0%,
+    #d4e5f2 35%,
+    #e0ecf8 70%,
+    #dce9f5 100%
+  );
+}
+
+.page-past-conferences::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(ellipse 1700px 1200px at 50% 50%, rgba(37, 99, 235, 0.28) 0%, transparent 50%);
+  opacity: 0.7;
+  z-index: -1;
+}
+
+/* Registration - Balanced Professional */
+.page-registration {
+  background: linear-gradient(
+    135deg,
+    #dce9f5 0%,
+    #e0ecf8 30%,
+    #f0efea 70%,
+    #dce9f5 100%
+  );
+}
+
+.page-registration::before {
+  content: '';
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  right: -10%;
+  bottom: -10%;
+  background: 
+    radial-gradient(ellipse 1500px 1000px at 25% 40%, rgba(37, 99, 235, 0.22) 0%, transparent 45%),
+    radial-gradient(ellipse 1400px 900px at 75% 60%, rgba(160, 115, 61, 0.18) 0%, transparent 50%);
+  opacity: 0.6;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Expert Connect - Collaborative Tone */
+.page-expert-connect {
+  background: linear-gradient(
+    135deg,
+    #e8f5e9 0%,
+    #dce9f5 40%,
+    #f0efea 80%,
+    #e8f5e9 100%
+  );
+}
+
+.page-expert-connect::before {
+  content: '';
+  position: absolute;
+  top: -5%;
+  left: -5%;
+  right: -5%;
+  bottom: -5%;
+  background: 
+    radial-gradient(ellipse 1600px 1100px at 30% 50%, rgba(160, 115, 61, 0.25) 0%, transparent 45%),
+    radial-gradient(ellipse 1400px 1000px at 70% 40%, rgba(37, 99, 235, 0.2) 0%, transparent 50%);
+  opacity: 0.65;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Advisory Team - Prestige & Authority */
+.page-advisory-team {
+  background: linear-gradient(
+    135deg,
+    #dce9f5 0%,
+    #e0ecf8 30%,
+    #e8f3fc 70%,
+    #dce9f5 100%
+  );
+}
+
+.page-advisory-team::before {
+  content: '';
+  position: absolute;
+  top: -15%;
+  left: -15%;
+  right: -15%;
+  bottom: -15%;
+  background: 
+    radial-gradient(ellipse 1800px 1200px at 40% 30%, rgba(30, 58, 95, 0.28) 0%, transparent 45%),
+    radial-gradient(ellipse 1600px 1000px at 60% 70%, rgba(37, 99, 235, 0.22) 0%, transparent 50%);
+  opacity: 0.7;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Career - Dynamic Professional */
+.page-career {
+  background: linear-gradient(
+    135deg,
+    #f0efea 0%,
+    #e8e5de 35%,
+    #dce9f5 65%,
+    #f0efea 100%
+  );
+}
+
+.page-career::before {
+  content: '';
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  right: -10%;
+  bottom: -10%;
+  background: 
+    radial-gradient(ellipse 1700px 1100px at 35% 45%, rgba(160, 115, 61, 0.27) 0%, transparent 45%),
+    radial-gradient(ellipse 1500px 950px at 65% 55%, rgba(37, 99, 235, 0.23) 0%, transparent 50%);
+  opacity: 0.68;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Innovation Challenge - Forward Thinking */
+.page-innovation {
+  background: linear-gradient(
+    135deg,
+    #d4e5f2 0%,
+    #e0ecf8 35%,
+    #e8f0ff 70%,
+    #d4e5f2 100%
+  );
+}
+
+.page-innovation::before {
+  content: '';
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  right: -10%;
+  bottom: -10%;
+  background: 
+    radial-gradient(ellipse 1800px 1200px at 45% 35%, rgba(37, 99, 235, 0.3) 0%, transparent 45%),
+    radial-gradient(ellipse 1600px 1000px at 55% 65%, rgba(30, 58, 95, 0.24) 0%, transparent 50%);
+  opacity: 0.75;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Books - Intellectual Atmosphere */
+.page-books {
+  background: linear-gradient(
+    135deg,
+    #f0efea 0%,
+    #e8e5de 35%,
+    #f0f9ff 70%,
+    #f0efea 100%
+  );
+}
+
+.page-books::before {
+  content: '';
+  position: absolute;
+  top: -8%;
+  left: -8%;
+  right: -8%;
+  bottom: -8%;
+  background: 
+    radial-gradient(ellipse 1700px 1100px at 40% 40%, rgba(160, 115, 61, 0.26) 0%, transparent 45%),
+    radial-gradient(ellipse 1500px 950px at 60% 60%, rgba(37, 99, 235, 0.21) 0%, transparent 50%);
+  opacity: 0.65;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Blog - Creative Professional */
+.page-blog {
+  background: linear-gradient(
+    135deg,
+    #e8f5e9 0%,
+    #dce9f5 40%,
+    #f0efea 80%,
+    #e8f5e9 100%
+  );
+}
+
+.page-blog::before {
+  content: '';
+  position: absolute;
+  top: -12%;
+  left: -12%;
+  right: -12%;
+  bottom: -12%;
+  background: 
+    radial-gradient(ellipse 1750px 1150px at 35% 50%, rgba(37, 99, 235, 0.25) 0%, transparent 45%),
+    radial-gradient(ellipse 1600px 1000px at 65% 40%, rgba(160, 115, 61, 0.22) 0%, transparent 50%);
+  opacity: 0.7;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Article Submissions - Academic Rigor */
+.page-articles {
+  background: linear-gradient(
+    135deg,
+    #dce9f5 0%,
+    #e0ecf8 35%,
+    #e8f3fc 70%,
+    #dce9f5 100%
+  );
+}
+
+.page-articles::before {
+  content: '';
+  position: absolute;
+  top: -12%;
+  left: -12%;
+  right: -12%;
+  bottom: -12%;
+  background: 
+    radial-gradient(ellipse 1800px 1200px at 45% 40%, rgba(30, 58, 95, 0.27) 0%, transparent 45%),
+    radial-gradient(ellipse 1600px 1000px at 55% 60%, rgba(37, 99, 235, 0.23) 0%, transparent 50%);
+  opacity: 0.72;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Conference Detail Pages */
+.conference-detail {
+  background: linear-gradient(
+    135deg,
+    #f8fafc 0%,
+    #f0f9ff 50%,
+    #faf8f3 100%
+  );
+}
+
+/* Subtle Section Backgrounds */
+.section-international {
+  background: linear-gradient(
+    90deg,
+    rgba(44, 82, 130, 0.03) 0%,
+    rgba(37, 99, 235, 0.04) 50%,
+    rgba(156, 107, 44, 0.02) 100%
+  );
+}
+
+/* Sophisticated Hero Sections */
+.hero-international {
+  background: linear-gradient(
+    135deg,
+    #1e3a5f 0%,
+    #2666c1 45%,
+    #26498b 100%
+  );
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-international::before {
+  content: '';
+  position: absolute;
+  top: -30%;
+  right: -15%;
+  width: 900px;
+  height: 900px;
+  background: radial-gradient(circle, rgba(160, 115, 61, 0.2) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.hero-international::after {
+  content: '';
+  position: absolute;
+  bottom: -25%;
+  left: -10%;
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.15) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+/* Professional Cards with Subtle Glass Effect */
+.card-glass {
+  background: rgba(248, 251, 255, 0.93);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(220, 233, 245, 0.6);
+  box-shadow: 0 8px 32px rgba(30, 58, 95, 0.12);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.card-glass:hover {
+  background: rgba(248, 251, 255, 0.98);
+  box-shadow: 0 15px 50px rgba(30, 58, 95, 0.18);
+  transform: translateY(-3px);
+}
+
+/* Sophisticated Geometric Patterns */
+.pattern-geometric {
+  background-image: 
+    repeating-linear-gradient(0deg, transparent, transparent 60px, rgba(44, 82, 130, 0.03) 60px, rgba(44, 82, 130, 0.03) 61px),
+    repeating-linear-gradient(90deg, transparent, transparent 60px, rgba(44, 82, 130, 0.03) 60px, rgba(44, 82, 130, 0.03) 61px);
+  background-size: 100% 100%;
+}
+
+/* Refined Accent Bars */
+.accent-bar-international {
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    #1e3a5f 0%,
+    #2666c1 35%,
+    #a0733d 65%,
+    #1e3a5f 100%
+  );
+  box-shadow: 0 3px 20px rgba(30, 58, 95, 0.3);
+}
+
+/* Professional Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.slide-in-left {
+  animation: slideInLeft 0.6s ease-out;
+}
+
+/* Logo - Professional Styling */
 .logo {
   height: 6em;
   padding: 1.5em;
   will-change: filter;
-  transition: filter 300ms;
+  transition: filter 300ms ease;
 }
+
 .logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+  filter: drop-shadow(0 0 2em rgba(44, 82, 130, 0.3));
 }
+
 .logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  filter: drop-shadow(0 0 2em rgba(156, 107, 44, 0.3));
 }
 
 @keyframes logo-spin {
@@ -39,4 +490,25 @@
 
 .read-the-docs {
   color: #888;
+}
+
+/* Responsive elegance */
+@media (max-width: 768px) {
+  .hero-international::before {
+    width: 300px;
+    height: 300px;
+    top: -20%;
+    right: -10%;
+  }
+
+  .hero-international::after {
+    width: 250px;
+    height: 250px;
+    bottom: -15%;
+    left: -5%;
+  }
+
+  header, nav {
+    box-shadow: 0 1px 10px rgba(44, 82, 130, 0.1);
+  }
 }

@@ -44,7 +44,7 @@ const speakers = [
 
 const PastSpeakers = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen page-past-conferences">
       <Header />
 
       <section className="relative py-16 md:py-24 overflow-hidden">

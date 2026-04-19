@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const ShareYourStory = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen page-blog">
       <Header />
 
       <section className="relative py-16 md:py-24 overflow-hidden">

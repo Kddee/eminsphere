@@ -5,7 +5,7 @@ import { Award } from "lucide-react";
 
 const GetRecognized = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen page-home">
       <Header />
 
       <section className="relative py-16 md:py-24 overflow-hidden">

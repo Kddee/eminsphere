@@ -39,7 +39,7 @@ const judgingCriteria = [
 
 const InnovationChallenge = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen page-innovation">
       <Header />
 
       {/* Hero */}

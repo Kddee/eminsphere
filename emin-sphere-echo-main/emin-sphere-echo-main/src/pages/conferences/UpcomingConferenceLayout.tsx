@@ -228,7 +228,7 @@ const UpcomingConferenceLayout = () => {
             </motion.div>
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row">
               <div className="rounded-full bg-cyan-400 px-8 py-4 text-sm font-semibold text-slate-950 shadow-lg shadow-cyan-500/20">
-                12th April 2026 | Virtual Mode | Global Participation
+                14 June 2026 | Virtual Mode | Global Participation
               </div>
               <a
                 href={eminsphereExternalUrl}
@@ -475,7 +475,7 @@ const UpcomingConferenceLayout = () => {
   }
 
   return (
-    <div className="min-h-screen bg-background flex flex-col font-body">
+    <div className="min-h-screen page-upcoming-conferences flex flex-col font-body">
       <Header />
       <main className="flex-1 max-w-5xl mx-auto w-full px-4 py-16 md:py-24">
         <div className="text-center mb-16 relative">

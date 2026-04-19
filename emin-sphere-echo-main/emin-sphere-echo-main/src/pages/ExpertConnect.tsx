@@ -12,7 +12,7 @@ const services = [
 
 const ExpertConnect = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen page-expert-connect">
       <Header />
 
       <section className="relative py-16 md:py-24 overflow-hidden">

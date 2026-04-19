@@ -50,7 +50,7 @@ export const upcomingConferences: Record<string, ConferenceData> = {
   "icaist-26": {
     id: "icaist-26",
     title: "ICQADTS-2026",
-    date: "12th April 2026",
+    date: "14 June 2026",
     location: "Virtual Mode | Global Participation",
     description: "ICQADTS-2026 is a high-impact international research forum dedicated to the advancement of next-generation intelligent computational ecosystems. It focuses on the integration of Quantum Computing, AI, Autonomous Systems Engineering, and Cyber-Physical Digital Twin infrastructures. All submissions undergo a double-blind peer-review process, offering ISBN Proceedings and recommendations for Scopus/WoS indexed journals.",
     thematicTracks: [
@@ -62,16 +62,16 @@ export const upcomingConferences: Record<string, ConferenceData> = {
       "Human-Centric Intelligent Systems (Explainable AI, Brain-computer interfaces)"
     ],
     milestones: [
-      { name: "Paper Submission Deadline", date: "2 April 2026" },
-      { name: "Acceptance Notification", date: "6 April 2026" },
-      { name: "Camera Ready & Registration", date: "10 April 2026" }
+      { name: "Paper Submission Deadline", date: "8 June 2026" },
+      { name: "Acceptance Notification", date: "12 June 2026" },
+      { name: "Camera Ready & Registration", date: "13 June 2026" }
     ]
   },
   "icmref-26": {
     id: "icmref-26",
     title: "ICMREF-26",
-    date: "26 April 2026",
-    location: "Virtual Mode",
+    date: "7 June 2026",
+    location: "Hybrid Mode | Nairobi, Kenya",
     description: "A global platform for researchers and industry professionals to explore multidisciplinary innovations in AI, Software Systems, and emerging technologies. It fosters collaboration across computing, engineering, healthcare, and business. All submissions undergo a double-blind peer-review process, offering ISBN Proceedings and recommendations for Scopus/WoS indexed journals.",
     thematicTracks: [
       "Artificial Intelligence & Machine Learning (Deep learning, NLP)",
@@ -82,15 +82,15 @@ export const upcomingConferences: Record<string, ConferenceData> = {
       "Sustainable & Smart Systems (Green tech, smart infrastructure)"
     ],
     milestones: [
-      { name: "Paper Submission", date: "5 April 2026" },
-      { name: "Acceptance Notification", date: "10 April 2026" },
-      { name: "Final Submission", date: "18 April 2026" }
+      { name: "Paper Submission", date: "1 June 2026" },
+      { name: "Acceptance Notification", date: "5 June 2026" },
+      { name: "Final Submission", date: "6 June 2026" }
     ]
   },
   "icaits-26": {
     id: "icaits-26",
     title: "ICAESET-2026",
-    date: "15 March 2026",
+    date: "14 June 2026",
     location: "Global Participation",
     description: "A prestigious platform for discussing cutting-edge innovations in engineering systems and computing paradigms. It provides an interdisciplinary forum for sharing research findings and practical experiences. All submissions undergo a double-blind peer-review process, offering ISBN Proceedings and recommendations for Scopus/WoS indexed journals.",
     thematicTracks: [
@@ -103,15 +103,15 @@ export const upcomingConferences: Record<string, ConferenceData> = {
       "Cloud & Edge Computing"
     ],
     milestones: [
-      { name: "Paper Submission", date: "25 February 2026" },
-      { name: "Final Acceptance", date: "8 March 2026" },
-      { name: "Registration Deadline", date: "10 March 2026" }
+      { name: "Paper Submission", date: "8 June 2026" },
+      { name: "Final Acceptance", date: "12 June 2026" },
+      { name: "Registration Deadline", date: "13 June 2026" }
     ]
   },
   "icates-26": {
     id: "icates-26",
     title: "ICATES-26",
-    date: "24 May 2026",
+    date: "14 June 2026",
     location: "Hybrid Mode",
     description: "A premier platform exploring advancements in AI, engineering technologies, and intelligent systems. It focuses on the integration of AI with robotics, automation, and smart infrastructure. All submissions undergo a double-blind peer-review process, offering ISBN Proceedings and recommendations for Scopus/WoS indexed journals.",
     thematicTracks: [
@@ -123,9 +123,9 @@ export const upcomingConferences: Record<string, ConferenceData> = {
       "Cloud & Edge Computing"
     ],
     milestones: [
-      { name: "Paper Submission", date: "5 May 2026" },
-      { name: "Acceptance Notification", date: "12 May 2026" },
-      { name: "Final Submission", date: "18 May 2026" }
+      { name: "Paper Submission", date: "8 June 2026" },
+      { name: "Acceptance Notification", date: "12 June 2026" },
+      { name: "Final Submission", date: "13 June 2026" }
     ]
   }
 };

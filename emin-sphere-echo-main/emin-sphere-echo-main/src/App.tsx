@@ -8,6 +8,7 @@ import Index from "./pages/Index.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import ApplyAsReviewer from "./pages/ApplyAsReviewer.tsx";
 import InnovationChallenge from "./pages/InnovationChallenge.tsx";
+import GlobalBackground from "./components/GlobalBackground.tsx";
 
 import PastSpeakers from "./pages/PastSpeakers.tsx";
 import Registration from "./pages/Registration.tsx";
@@ -42,6 +43,7 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <ScrollToTop />
+        <GlobalBackground />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/apply-as-reviewer" element={<ApplyAsReviewer />} />

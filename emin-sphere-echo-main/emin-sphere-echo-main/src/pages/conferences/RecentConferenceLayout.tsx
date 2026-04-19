@@ -36,7 +36,7 @@ const RecentConferenceLayout = () => {
   }
 
   return (
-    <div className="min-h-screen bg-background flex flex-col font-body selection:bg-primary/30">
+    <div className="min-h-screen page-past-conferences flex flex-col font-body selection:bg-primary/30">
       <Header />
       
       {/* Dynamic Animated Hero Area */}

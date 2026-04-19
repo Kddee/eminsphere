@@ -1,48 +1,60 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* =============================================
+   EMINSPHERE GLOBAL DESIGN SYSTEM
+   Primary: Deep Navy #0f1b35
+   Secondary: Royal Blue #1a3a6e
+   Accent: Electric Blue #2563eb
+   Gold: #d4a017
+   Background: White / Light Gray
+   ============================================= */
+
 @layer base {
   :root {
-    --background: 40 20% 97%;
-    --foreground: 220 20% 20%;
+    /* Core Brand */
+    --navy: 215 65% 14%;          /* #0f1b35 */
+    --navy-mid: 218 61% 26%;      /* #1a3a6e */
+    --royal: 217 91% 50%;         /* #2563eb */
+    --royal-hover: 217 91% 43%;
+    --gold: 41 88% 45%;           /* #d4a017 */
+    --gold-light: 41 80% 60%;
+
+    /* Tailwind CSS vars */
+    --background: 0 0% 100%;
+    --foreground: 215 65% 14%;
 
     --card: 0 0% 100%;
-    --card-foreground: 220 20% 20%;
+    --card-foreground: 215 65% 14%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 20% 20%;
+    --popover-foreground: 215 65% 14%;
 
-    --primary: 210 50% 35%;
+    --primary: 217 91% 50%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 35 30% 90%;
-    --secondary-foreground: 220 20% 20%;
+    --secondary: 218 61% 26%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 40 15% 93%;
-    --muted-foreground: 220 10% 45%;
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 14% 46%;
 
-    --accent: 200 60% 45%;
+    --accent: 41 88% 45%;
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 35 20% 85%;
-    --input: 35 20% 85%;
-    --ring: 210 50% 35%;
+    --border: 220 14% 88%;
+    --input: 220 14% 88%;
+    --ring: 217 91% 50%;
 
     --radius: 0.5rem;
 
-    --hero-overlay: linear-gradient(135deg, hsla(210, 50%, 35%, 0.7), hsla(35, 30%, 40%, 0.5));
-    --section-warm: 35 25% 92%;
-    --section-dark: 210 40% 18%;
-    --section-dark-foreground: 40 20% 95%;
-    --gold: 38 70% 55%;
-    --gold-light: 40 60% 75%;
-
+    /* Sidebar */
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
     --sidebar-primary: 240 5.9% 10%;
@@ -60,21 +72,34 @@
   }
   body {
     @apply bg-background text-foreground;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
   }
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
   }
 }
 
+/* =============================================
+   UTILITY CLASSES
+   ============================================= */
 @layer components {
-  .section-warm {
-    background-color: hsl(var(--section-warm));
+
+  /* Navy background sections */
+  .section-navy {
+    background-color: hsl(var(--navy));
+    color: white;
   }
-  .section-dark {
-    background-color: hsl(var(--section-dark));
-    color: hsl(var(--section-dark-foreground));
+  .section-navy-mid {
+    background-color: hsl(var(--navy-mid));
+    color: white;
   }
+  .section-light {
+    background-color: hsl(220, 20%, 97%);
+  }
+
+  /* Gold accent */
   .text-gold {
     color: hsl(var(--gold));
   }
@@ -84,15 +109,68 @@
   .border-gold {
     border-color: hsl(var(--gold));
   }
+
+  /* Royal blue */
+  .text-royal {
+    color: hsl(var(--royal));
+  }
+  .bg-royal {
+    background-color: hsl(var(--royal));
+  }
+  .bg-navy {
+    background-color: hsl(var(--navy));
+  }
+  .bg-navy-mid {
+    background-color: hsl(var(--navy-mid));
+  }
+
+  /* Section label */
+  .section-label {
+    @apply text-xs font-bold uppercase tracking-[0.25em] mb-3 block;
+    color: hsl(217, 91%, 50%);
+  }
+  .section-label-light {
+    @apply text-xs font-bold uppercase tracking-[0.25em] text-blue-300 mb-3 block;
+  }
+
+  /* Button primary */
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-7 py-3.5 text-white rounded-lg font-semibold text-sm transition-all shadow-md hover:shadow-lg active:scale-95;
+    background-color: hsl(217, 91%, 50%);
+  }
+  .btn-primary:hover {
+    background-color: hsl(218, 61%, 26%);
+  }
+  .btn-outline {
+    @apply inline-flex items-center gap-2 px-7 py-3.5 border-2 border-white text-white rounded-lg font-semibold text-sm transition-all active:scale-95;
+  }
+  .btn-outline:hover {
+    background-color: white;
+    color: hsl(215, 65%, 14%);
+  }
+  .btn-gold {
+    @apply inline-flex items-center gap-2 px-7 py-3.5 text-white rounded-lg font-bold text-sm transition-all shadow-md active:scale-95;
+    background-color: hsl(41, 88%, 45%);
+  }
+  .btn-gold:hover {
+    filter: brightness(1.1);
+  }
+
+  /* Card base */
+  .card-base {
+    @apply bg-white border border-slate-200 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300;
+  }
+
+  /* Scrollbar */
   .gallery-scroll::-webkit-scrollbar {
-    height: 6px;
+    height: 4px;
   }
   .gallery-scroll::-webkit-scrollbar-track {
-    background: hsl(var(--muted));
-    border-radius: 3px;
+    background: hsl(220, 14%, 96%);
+    border-radius: 2px;
   }
   .gallery-scroll::-webkit-scrollbar-thumb {
-    background: hsl(var(--border));
-    border-radius: 3px;
+    background: hsl(var(--royal));
+    border-radius: 2px;
   }
 }

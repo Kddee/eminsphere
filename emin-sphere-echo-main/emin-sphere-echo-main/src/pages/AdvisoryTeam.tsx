@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const AdvisoryTeam = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen page-advisory-team">
       <Header />
 
       <section className="relative py-16 md:py-24 overflow-hidden">
