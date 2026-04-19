@@ -16,6 +16,8 @@ export default {
       fontFamily: {
         display: ['"Playfair Display"', 'serif'],
         body: ['"Open Sans"', 'sans-serif'],
+        poppins: ['"Poppins"', 'sans-serif'],
+        sans: ['"Open Sans"', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -23,6 +25,13 @@ export default {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        primaryTeal: "#3DC2D0",
+        secondaryTeal: "#12AABB",
+        ctaBlue: "#2964F2",
+        accentOrange: "#FF7043",
+        accentRed: "#FF7864",
+        darkNeutral: "#212121",
+        footerBg: "#000920",
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",

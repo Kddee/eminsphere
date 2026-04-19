@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#0a1628] text-white border-t border-[#1a3a6e]/30">
+    <footer className="w-full bg-[#0a1628] text-white border-t border-[#1a3a6e]/30">
       {/* Top blue rule */}
-      <div className="h-1 bg-gradient-to-r from-[#1a3a6e] via-[#2563eb] to-[#1a3a6e]" />
+      <div className="w-full h-1 bg-gradient-to-r from-[#1a3a6e] via-[#2563eb] to-[#1a3a6e]" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-8 py-14 grid grid-cols-1 md:grid-cols-4 gap-10">
 

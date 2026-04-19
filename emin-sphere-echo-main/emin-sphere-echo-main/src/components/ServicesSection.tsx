@@ -1,117 +1,84 @@
-import { motion } from "framer-motion";
-import { BookOpen, Users, GraduationCap, Briefcase, ChevronRight, Award, Zap, ArrowRight } from "lucide-react";
+import { BookOpen, Users, GraduationCap, Briefcase, Award, Zap, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const services = [
   {
-    title: "Academic Publishing",
-    description: "Support for publishing in high-impact Scopus/WoS indexed international journals.",
+    title: "academic publishing",
     icon: BookOpen,
     link: "/article-submissions",
+    color: "#3DC2D0" // primaryTeal
   },
   {
-    title: "Conference Management",
-    description: "Comprehensive end-to-end solutions for organizing international conferences.",
+    title: "conference management",
     icon: Users,
     link: "/upcoming-conferences",
+    color: "#FF7043" // accentOrange
   },
   {
-    title: "Thesis Consultation",
-    description: "Expert guidance for masters and doctoral research projects worldwide.",
+    title: "thesis consultation",
     icon: GraduationCap,
     link: "/expert-connect",
+    color: "#2964F2" // ctaBlue
   },
   {
-    title: "Skill Development",
-    description: "Tailored workshops, webinars, and training for academic and professional growth.",
+    title: "skill development",
     icon: Briefcase,
     link: "/career",
+    color: "#12AABB" // secondaryTeal
   },
   {
-    title: "Expert Connect",
-    description: "Direct access to top academic advisors, reviewers, and industry speakers.",
+    title: "expert connect",
     icon: Zap,
     link: "/expert-connect",
+    color: "#FF7864" // accentRed
   },
   {
-    title: "Innovation Hub",
-    description: "Collaborate on cutting-edge research challenges and innovation programs.",
+    title: "innovation hub",
     icon: Award,
     link: "/innovation-challenge-2026",
+    color: "#3DC2D0"
   },
 ];
 
 const ServicesSection = () => {
   return (
-    <section className="py-16 md:py-24 bg-[#f5f7fb]">
-      <div className="max-w-7xl mx-auto px-4 md:px-8">
+    <section className="py-16 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 text-center">
 
-        {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
-          <div>
-            <span className="section-label">Elevate Your Research</span>
-            <h2 className="text-3xl md:text-4xl font-black text-[#0f1b35]">
-              Our Key <span className="text-[#2563eb]">Services</span>
-            </h2>
-          </div>
-          <p className="text-slate-500 text-sm md:text-base max-w-sm font-medium leading-relaxed">
-            Empowering researchers with comprehensive support for global academic excellence.
-          </p>
-        </div>
+        {/* Header matching Target Site Top Categories */}
+        <h2 className="text-3xl font-bold font-poppins text-darkNeutral mb-10 pb-2 inline-block border-b-2 border-secondaryTeal uppercase tracking-wide">
+          Top Services
+        </h2>
 
-        {/* Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        {/* Grid matching the slider/grid of Top Categories */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
           {services.map((service, i) => (
-            <motion.div
-              key={service.title}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.07, duration: 0.45 }}
-              viewport={{ once: true }}
-            >
-              <Link
-                to={service.link}
-                className="group flex flex-col h-full p-7 bg-white border border-slate-200 rounded-xl hover:border-[#2563eb]/40 hover:shadow-xl hover:shadow-[#2563eb]/5 hover:-translate-y-1 transition-all duration-300"
+            <div key={i} className="bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow border border-gray-100 flex flex-col items-center justify-center text-center group cursor-pointer">
+              
+              {/* Circular Icon Style from Target */}
+              <div 
+                className="w-[70px] h-[70px] rounded-full flex items-center justify-center mb-4 transition-transform group-hover:scale-110"
+                style={{ backgroundColor: `${service.color}15` }} // 15% opacity background
               >
-                {/* Icon with navy square background */}
-                <div className="w-12 h-12 rounded-lg bg-[#0f1b35] flex items-center justify-center mb-5 group-hover:bg-[#2563eb] transition-colors duration-300">
-                  <service.icon className="w-6 h-6 text-white" />
-                </div>
+                <service.icon 
+                  className="w-8 h-8" 
+                  style={{ color: service.color }} 
+                />
+              </div>
 
-                <h3 className="text-base font-bold text-[#0f1b35] mb-2 group-hover:text-[#2563eb] transition-colors">
-                  {service.title}
-                </h3>
+              <h5 className="text-[13px] font-bold text-darkNeutral uppercase tracking-wide font-poppins mb-2 group-hover:text-secondaryTeal transition-colors line-clamp-2 min-h-[40px]">
+                {service.title}
+              </h5>
 
-                <p className="text-slate-500 text-sm leading-relaxed mb-5 flex-1 font-medium">
-                  {service.description}
-                </p>
-
-                <div className="flex items-center gap-1.5 text-xs font-bold text-slate-400 group-hover:text-[#2563eb] transition-all">
-                  Explore Service
-                  <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                </div>
+              <Link 
+                to={service.link}
+                className="text-[12px] font-semibold text-gray-500 hover:text-secondaryTeal uppercase tracking-wider inline-flex items-center gap-1 mt-auto"
+              >
+                View More <ArrowRight className="w-3 h-3" />
               </Link>
-            </motion.div>
-          ))}
-        </div>
 
-        {/* CTA bar */}
-        <div className="mt-12 p-8 md:p-10 rounded-xl bg-[#0f1b35] flex flex-col md:flex-row items-center justify-between gap-6">
-          <div>
-            <h3 className="text-xl md:text-2xl font-black text-white mb-1">
-              Ready to start your research journey?
-            </h3>
-            <p className="text-blue-300 text-sm font-medium">
-              Connect with our global network of academic experts today.
-            </p>
-          </div>
-          <Link
-            to="/registration"
-            className="flex-shrink-0 inline-flex items-center gap-2 px-8 py-3.5 bg-[#2563eb] text-white rounded-lg font-bold text-sm hover:bg-white hover:text-[#0f1b35] transition-all shadow-lg active:scale-95"
-          >
-            Get Started Now
-            <ArrowRight className="w-4 h-4" />
-          </Link>
+            </div>
+          ))}
         </div>
 
       </div>
