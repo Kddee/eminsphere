@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800&family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -72,11 +72,11 @@
   }
   body {
     @apply bg-background text-foreground;
-    font-family: "Open Sans", sans-serif;
+    font-family: 'Inter', sans-serif;
     -webkit-font-smoothing: antialiased;
   }
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 700;
   }
 }
@@ -172,5 +172,27 @@
   .gallery-scroll::-webkit-scrollbar-thumb {
     background: hsl(var(--royal));
     border-radius: 2px;
+  }
+}
+
+/* =============================================
+   CLONED WEBSITE OVERRIDES
+   ============================================= */
+/* Fix Tailwind class conflict: Tailwind's .collapse hides elements with visibility: collapse! */
+.navbar-collapse {
+  visibility: visible !important;
+}
+
+/* Force the target site's extremely buggy desktop navbar to be visible globally! */
+@media (min-width: 768px) {
+  div#navbarSupportedContent {
+    display: flex !important;
+  }
+}
+
+/* Make sure mobile toggler works in case we need it */
+@media (max-width: 767px) {
+  #mobileNavbar.show {
+    display: block !important;
   }
 }

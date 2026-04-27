@@ -1,0 +1,919 @@
+/* layout page css */
+#more {
+    display: none;
+}
+
+.search-div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.search-div i {
+    position: absolute;
+    z-index: 2;
+    padding-left: 10px;
+}
+
+.search-div .list-search {
+    padding-left: 30px;
+    height: 40px;
+}
+
+.list-search {
+    background: #ecf1f5;
+    border-radius: 3px;
+    border: none;
+    padding-left: 20px;
+    position: sticky;
+    top: -2px;
+    z-index: 1;
+}
+
+.show-btn {
+    padding: 3px;
+    font-size: 12px;
+    color: #000;
+    font-weight: bolder;
+    border: 1px solid #ababab;
+}
+
+/*  change */
+#accordion-1 {
+    margin-bottom: 10px;
+}
+
+#accordion-1 .content {
+    padding: 9px 7px 9px 13px;
+}
+
+#accordion-1 .content ul {
+    list-style: none;
+    color: #075086;
+    margin-bottom: 1px;
+    line-height: 28px;
+}
+
+#accordion-1 .head {
+    padding: 10px 8px 7px;
+}
+
+#accordion-1 .active h6 {
+    color: #fff;
+}
+
+.banner4-side img {
+    border: 1px solid #ccc;
+}
+
+#accordion-1:hover h6 {
+    color: #fff;
+}
+
+.head h6 {
+    /*        color: #000;*/
+}
+
+.s-filter li {
+    font-weight: 500;
+}
+
+.container-checkbox .checkmark {
+    top: 5px;
+    height: 17px;
+    width: 17px;
+}
+
+.container-checkbox .checkmark:after {
+    left: 6px;
+    top: 2px;
+}
+
+.w-none {
+    display: none;
+}
+
+ul.list-unstyled.footer-nav li {
+    margin-bottom: 0px !important;
+}
+
+.middle-banner img {
+    border-radius: 15px;
+}
+
+@media (max-width: 768px) {
+    .search-div .list-search {
+        padding-left: 40px !important;
+    }
+
+    .search-div>i {
+        color: #2563eb !important;
+    }
+
+    .w-none {
+        display: block;
+    }
+
+    .popup-message p {
+        width: 300px !important;
+    }
+
+    .unfollow-box {
+        width: 100% !important;
+    }
+
+    .popup-content {
+        width: 350px !important;
+        height: 115px !important;
+    }
+
+    .selected-event {
+        background: none;
+    }
+
+    .contentt ul {
+        padding-left: 15px;
+        list-style: none;
+        line-height: 33px;
+    }
+
+    .filter-btn-div button {
+        width: max-content;
+        height: 40px;
+        opacity: 1;
+        gap: 10px;
+        border-radius: 8px;
+        border-width: 1px;
+        padding-top: 8px;
+        padding-right: 18px;
+        padding-bottom: 12px;
+        padding-left: 12px;
+        background: #2563EB;
+        color: #fff;
+    }
+
+    .container-checkbox .checkmark {
+        top: 11px !important;
+        width: 15px !important;
+        height: 15px !important;
+    }
+
+    .container-checkbox {
+        padding-left: 23px;
+        font-size: 14px;
+        font-weight: 500;
+        color: #000;
+    }
+
+    .modal .c-dte,
+    .c-loc {
+        text-align: left !important;
+    }
+
+    .close-btn {
+        top: 15px !important;
+        right: 7% !important;
+    }
+
+    div#email-modal {
+        width: 100% !important;
+        right: 0 !important;
+    }
+
+    .share-popup {
+        width: 100% !important;
+    }
+
+    .share-popup-content {
+        margin: 10px;
+        width: 100% !important;
+        left: -10px !important;
+    }
+
+    div#emailModal {
+        right: 0 !important;
+        width: 100% !important;
+    }
+
+    input {
+        width: 320px !important;
+    }
+
+    .listing-page {
+        padding-bottom: 40px;
+        top: 94px !important;
+    }
+
+    .listing-page h1 {
+        font-weight: 600;
+        font-size: 25px;
+        line-height: 100%;
+        letter-spacing: 0%;
+        margin-top: 50px;
+    }
+
+    .breadcrumb {
+        padding-left: 0 !important;
+        margin-bottom: 0px !important;
+    }
+
+    a#follow-button {
+        margin: 0px !important;
+    }
+
+    .col-sm-12.col-12>.d-flex {
+        flex-direction: column;
+    }
+
+    .mob-filtertext {
+        font-weight: 600;
+        font-size: 25px;
+        line-height: 100%;
+        letter-spacing: 0%;
+        color: #0F172A;
+        margin: 0;
+    }
+
+    .filtertext {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+}
+
+@media(min-width:2000px) {
+    .share-popup-content {
+        top: 30%;
+        position: absolute;
+        left: 37% !important;
+    }
+
+    .close-btn {
+        position: absolute;
+        top: auto;
+        right: 9% !important;
+        font-size: 30px;
+        cursor: pointer;
+        top: 10px !important;
+    }
+
+    .subscribe-submit {
+        width: 120px;
+    }
+}
+
+.frm .form-control {
+    margin-bottom: 3px;
+}
+
+.frm .col-sm-6,
+.frm .col-sm-12 {
+    padding: 5px 8px;
+}
+
+.modal .form-control {
+    margin-bottom: 23px;
+    background: #fff;
+}
+
+.sub-paper-btn:hover {
+    color: #fff;
+}
+
+.c-dte,
+.c-loc {
+    font-size: 15px;
+}
+
+.timer div {
+    padding: 5px;
+    /* display: inline-flex; */
+}
+
+.read-btn {
+    color: #2563eb !important;
+    font-weight: bold;
+}
+
+.modal .timer .m-tc {
+    padding: 4px 7px;
+    font-size: 17px;
+}
+
+.conf-list #myModalBottom {
+    display: none !important;
+}
+
+.cty-card .nav-tabs .nav-link {
+    border: 1px solid #1286bc !important;
+}
+
+/* search start */
+.feedback-form {
+    position: fixed;
+    top: 15%;
+    right: 0;
+    z-index: 100;
+    min-height: 450px;
+}
+
+.mod h2 {
+    font-size: 14px;
+    color: #000000;
+    margin-top: 0 !important;
+}
+
+.titleline-1 {
+    position: relative;
+    width: 100px;
+    border-top: 3px solid #8cfffa;
+    margin-bottom: 15px;
+}
+
+.btn-successs {
+    color: #fff;
+    background: linear-gradient(111.08deg, #00EAF1 13.91%, #212D8D 100.28%);
+    border-color: #ffffff;
+    border: 3px solid;
+    text-decoration: none;
+}
+
+.btn-successs:hover {
+    border: 3px solid #8cfffa;
+    color: #fff;
+}
+
+@-webkit-keyframes glowing {
+    0% {
+        background-color: #00b6ce;
+        -webkit-box-shadow: 0 0 3px #00b6ce;
+    }
+
+    50% {
+        background-color: #00b6ce;
+        -webkit-box-shadow: 0 0 40px #00b6ce;
+    }
+
+    100% {
+        background-color: #00b6ce;
+        -webkit-box-shadow: 0 0 3px #00b6ce;
+    }
+}
+
+@-moz-keyframes glowing {
+    0% {
+        background-color: #00b6ce;
+        -moz-box-shadow: 0 0 3px #00b6ce;
+    }
+
+    50% {
+        background-color: #00b6ce;
+        -moz-box-shadow: 0 0 40px #00b6ce;
+    }
+
+    100% {
+        background-color: #00b6ce;
+        -moz-box-shadow: 0 0 3px #00b6ce;
+    }
+}
+
+@-o-keyframes glowing {
+    0% {
+        background-color: #00b6ce;
+        box-shadow: 0 0 3px #00b6ce;
+    }
+
+    50% {
+        background-color: #00b6ce;
+        box-shadow: 0 0 40px #00b6ce;
+    }
+
+    100% {
+        background-color: #00b6ce;
+        box-shadow: 0 0 3px #00b6ce;
+    }
+}
+
+@keyframes glowing {
+    0% {
+        background-color: #00b6ce;
+        box-shadow: 0 0 3px #00b6ce;
+    }
+
+    50% {
+        background-color: #00b6ce;
+        box-shadow: 0 0 40px #00b6ce;
+    }
+
+    100% {
+        background-color: #00b6ce;
+        box-shadow: 0 0 3px #00b6ce;
+    }
+}
+
+.feedback-form-show {
+    right: 0 !important;
+}
+
+.feedback_form_area_inners label {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: 700;
+    color: #000 !important;
+    font-size: 14px;
+}
+
+.feedback_form_area {
+    position: relative;
+    display: none;
+    overflow: hidden;
+    background: #fff;
+}
+
+.feedback_form_area_search {
+    position: relative;
+    display: none;
+    overflow: hidden;
+    background: #fff;
+}
+
+.feedback_form_area_inners {
+    width: 300px;
+    min-height: 300px;
+    color: #fff;
+    padding: 15px;
+    border: 1px solid #212D8D;
+}
+
+.feedback_form_area h3 {
+    margin-top: 0;
+}
+
+.feedback_form_area_search h3 {
+    margin-top: 0;
+}
+
+.custom-inp {
+    width: 100%;
+    height: 35px;
+    padding-left: 5px;
+    color: #fff;
+    border: 1px #fff solid;
+    background: transparent;
+}
+
+.custom-inp-txt {
+    width: 100%;
+    height: 100px;
+    padding: 5px;
+    color: #fff;
+    border: 1px #fff solid;
+    background: transparent;
+}
+
+.feedback-form-btn-1 {
+    /* position: absolute;
+left: -45px;
+color: #fff;
+transform: rotate(90deg);
+top: 30%;
+border-radius: 10; */
+    display: none;
+}
+
+.form-group {
+    margin-bottom: 5px;
+}
+
+.form-control {
+    height: 41px !important;
+}
+
+@media only screen and (max-width: 320px) {
+    .feedback_form_area_inners {
+        width: 260px;
+        min-height: 450px;
+        color: #fff;
+        padding: 25px;
+    }
+}
+
+.text-warning {
+    color: #000000 !important;
+}
+
+.mobile-only {
+    display: none;
+}
+
+.desktop-only {
+    display: block;
+}
+
+/* For screens larger than 768px (desktop) */
+@media (min-width: 768px) {
+    .mobile-only {
+        display: none;
+    }
+
+    .desktop-only {
+        display: block;
+    }
+}
+
+#accordion-1 .head:hover,
+#accordion-1 .active {
+    background: linear-gradient(111.08deg, #0DBCC1 13.91%, #212D8D 100.28%) !important;
+    color: #fff;
+}
+
+/* For screens smaller than 768px (mobile) */
+@media (max-width: 767px) {
+    .mobile-only {
+        display: block;
+    }
+
+    .desktop-only {
+        display: none;
+    }
+
+    .followbtn-sec {
+        justify-content: center;
+    }
+
+    .follow-count {
+        text-align: center;
+    }
+
+    #popup-event {
+        top: 135px !important;
+    }
+}
+
+/* Basic Styles for Share Button */
+/* Basic Styles for Share Button */
+.share-btn {
+    cursor: pointer;
+    display: inline-block;
+}
+
+/* Share Popup Styles */
+.share-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    /* Set the opacity of the background */
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    /* Ensure it sits on top of other elements */
+    transition: opacity 0.3s ease;
+    /* Smooth transition for opacity change */
+}
+
+/* Popup Content */
+.share-popup-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    width: 470px;
+    height: 330px;
+    z-index: 10000;
+    top: 30%;
+    position: absolute;
+    left: 30%;
+}
+
+.share-popup-content h3 {
+    font-family: Poppins;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 24px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}
+
+.share-options a {
+    display: inline-block;
+    margin: 10px;
+}
+
+.share-options img {
+    width: 40px;
+    height: 40px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 175px;
+    right: 8% !important;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.share-options {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    margin: auto;
+}
+
+.share-options p {
+    font-family: Poppins;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    padding-top: 6px;
+    color: #0E8997;
+}
+
+.share-second {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    text-align: center;
+    justify-content: start;
+    align-items: center;
+    padding-top: 20px;
+    width: 55%;
+    margin: auto;
+}
+
+.email-modal {
+    display: block;
+    opacity: 1;
+    background-color: white;
+    border-radius: 5px;
+    border-radius: 5px;
+    z-index: 10000 !important;
+    width: 520px;
+    position: fixed;
+    height: 440px;
+    padding: 30px;
+    top: 150px;
+    right: 38%;
+    border-radius: 12px;
+}
+
+.close-email-modal {
+    right: 40px;
+    position: absolute;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #000;
+}
+
+.email-modal-content h3 {
+    font-family: Poppins;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 24px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    height: 50px;
+    font-family: 'Poppins';
+    padding: 0.5rem 0.75rem;
+    font-size: 0.85rem;
+    line-height: 1.25;
+    color: #464a4c;
+    background: #ECF1F5;
+    background-image: none;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 6px;
+    -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+    -moz-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+    -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+    transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+}
+
+.email-content {
+    text-align: left;
+}
+
+.email-content label {
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}
+
+#sharebtn {
+    background: -webkit-linear-gradient(40deg, #04d3e5, #1d4197);
+    padding: 10px 25px !important;
+    border-radius: 5px;
+    font-weight: 400;
+    font-size: 16px;
+    letter-spacing: 0;
+    color: #fff !important;
+    text-align: center;
+    margin: auto;
+    display: flex;
+    border: none;
+}
+
+.follow-but.active {
+    border: 2px solid #fff;
+    box-shadow: rgb(0, 234, 241) 3px 6px 8px;
+}
+
+.popup-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+#popupText {
+    color: #0E8997;
+    display: inline;
+    margin: 0;
+}
+
+.popup1 {
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding-top: 10px;
+}
+
+.popup {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding-top: 10px;
+}
+
+.unfollow-box {
+    top: 40%;
+    position: absolute;
+    left: 35%;
+    width: auto !important;
+    height: auto !important;
+}
+
+a#follow-button {
+    padding: 9px 10px;
+}
+
+.popup-content {
+    background: -webkit-linear-gradient(40deg, #04d3e5, #1d4197);
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgb(0 0 0 / 66%);
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    position: fixed;
+    width: 700px;
+    height: 60px;
+}
+
+.popup-content p {
+    color: #fff !important;
+}
+
+.popup-message p {
+    width: 600px;
+    color: #fff;
+    margin-bottom: 0px !important;
+}
+
+#unfollowing-btn {
+    background-color: #d9534f;
+    color: #fff;
+}
+
+.popup-message {
+    display: flex;
+    align-items: center;
+}
+
+.hidden {
+    display: none;
+}
+
+button {
+    margin: 5px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#cancelButton {
+    background-color: #ccc;
+    color: #000;
+}
+
+#confirmUnfollowButton {
+    background-color: #d9534f;
+    color: #fff;
+}
+
+@media (min-width: 1950px) and (max-width: 2500px) {
+    .share-popup-content {
+        top: 30%;
+        position: absolute;
+        left: 36%;
+    }
+}
+
+@media (min-width: 1300px) and (max-width: 1500px) {
+    .email-modal {
+        right: 34%;
+    }
+}
+
+@media (min-width: 1500px) and (max-width: 1900px) {
+    .share-popup-content {
+        top: 30%;
+        position: absolute;
+        left: 36%;
+    }
+
+    .close-btn {
+        right: 10% !important;
+    }
+
+    .unfollow-box {
+        top: 40%;
+        position: absolute;
+        left: 42%;
+    }
+}
+
+.disable-btn {
+    pointer-events: none;
+}
+
+.cancel {
+    background: #00561a;
+    color: #fff;
+}
+
+.content-section {
+    margin-top: -100px;
+}
+
+.top-banner-section {
+    direction: rtl;
+}
+
+@media(min-width: 1600px) {
+    .height-fix {
+        height: 100%;
+    }
+
+    .month-card {
+        height: 130px !important;
+    }
+
+    section.c-sec {
+        height: 650px;
+    }
+
+    .container.continents {
+        margin-top: 100px;
+    }
+}
+
+#open-search::placeholder {
+    color: #2964f2;
+    opacity: 1;
+}

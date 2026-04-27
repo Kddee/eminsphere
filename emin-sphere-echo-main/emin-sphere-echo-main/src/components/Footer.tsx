@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-[#0a1628] text-white border-t border-[#1a3a6e]/30">
+    <footer className="bg-[#0a1628] text-white border-t border-[#1a3a6e]/30">
       {/* Top blue rule */}
-      <div className="w-full h-1 bg-gradient-to-r from-[#1a3a6e] via-[#2563eb] to-[#1a3a6e]" />
+      <div className="h-1 bg-gradient-to-r from-[#1a3a6e] via-[#2563eb] to-[#1a3a6e]" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-8 py-14 grid grid-cols-1 md:grid-cols-4 gap-10">
 
@@ -13,10 +13,15 @@ const Footer = () => {
           <div className="flex items-center gap-3 mb-4">
             <img src="/assets/company logo .png" alt="Eminsphere" className="h-11 w-auto" />
             <div>
-              <p className="font-black text-lg text-white">
+              <p className="font-black text-xl text-white">
                 Eminsphere<span className="text-[#2563eb]">™</span>
               </p>
-              <p className="text-[9px] uppercase tracking-widest text-white/40 font-bold">Innovation Hub</p>
+              <div className="text-[9px] uppercase tracking-wide text-white/70 font-bold mt-1.5 leading-tight">
+                Global Academic, Research &amp; Innovation Platform<br />
+                ISO 9001:2015 Certified<br />
+                Quality Management System<br />
+                Certification issued by an accredited certification body
+              </div>
             </div>
           </div>
           <p className="text-sm text-white/50 mb-2 leading-relaxed max-w-sm">

@@ -4,11 +4,26 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { useEffect } from "react";
+import GlobalBackground from "@/components/GlobalBackground";
 import Index from "./pages/Index.tsx";
+
+import ClonedAddEvent from "./pages/ClonedAddEvent";
+import ClonedSubscribe from "./pages/ClonedSubscribe";
+import ClonedJournal from "./pages/ClonedJournal";
+import ClonedBlog from "./pages/ClonedBlog";
+import ClonedLogin from "./pages/ClonedLogin";
+import ClonedAllEvents from "./pages/ClonedAllEvents";
+import ClonedUpcoming from "./pages/ClonedUpcoming";
+import ClonedEngineering from "./pages/ClonedEngineering";
+import ClonedBusiness from "./pages/ClonedBusiness";
+import ClonedEducation from "./pages/ClonedEducation";
+
+import ClonedPreview from "./pages/ClonedPreview";
+import ClonedWildcard from "./pages/ClonedWildcard.tsx";
+import ConferenceDetail from "./pages/ConferenceDetail.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import ApplyAsReviewer from "./pages/ApplyAsReviewer.tsx";
 import InnovationChallenge from "./pages/InnovationChallenge.tsx";
-import GlobalBackground from "./components/GlobalBackground.tsx";
 
 import PastSpeakers from "./pages/PastSpeakers.tsx";
 import Registration from "./pages/Registration.tsx";
@@ -46,12 +61,28 @@ const App = () => (
         <GlobalBackground />
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/add-event.php" element={<ClonedAddEvent />} />
+          <Route path="/add-event" element={<ClonedAddEvent />} />
+          <Route path="/subscribe.php" element={<ClonedSubscribe />} />
+          <Route path="/subscribe" element={<ClonedSubscribe />} />
+          <Route path="/journal.php" element={<ClonedJournal />} />
+          <Route path="/journal" element={<ClonedJournal />} />
+          <Route path="/blog" element={<ClonedBlog />} />
+          <Route path="/login-page" element={<ClonedLogin />} />
+          <Route path="/all-events.php" element={<ClonedAllEvents />} />
+          <Route path="/all-events" element={<ClonedAllEvents />} />
+          <Route path="/upcoming-conferences.php" element={<ClonedUpcoming />} />
+          <Route path="/upcoming-conferences" element={<ClonedUpcoming />} />
+          <Route path="/engineering-conference" element={<ClonedEngineering />} />
+          <Route path="/business-and-economics-conference" element={<ClonedBusiness />} />
+          <Route path="/education-conference" element={<ClonedEducation />} />
+
+          <Route path="/conference-detail" element={<ConferenceDetail />} />
           <Route path="/apply-as-reviewer" element={<ApplyAsReviewer />} />
           <Route path="/eminsphere-s-innovation-challenge-2026" element={<InnovationChallenge />} />
           <Route path="/innovation-challenge-2026" element={<InnovationChallenge />} />
           
           {/* Recent conference pages */}
-          <Route path="/icaest-2026" element={<RecentConferenceLayout />} />
           <Route path="/icnse-26" element={<RecentConferenceLayout />} />
           <Route path="/ictet-26" element={<RecentConferenceLayout />} />
           <Route path="/icmess-26" element={<RecentConferenceLayout />} />
@@ -68,10 +99,9 @@ const App = () => (
           <Route path="/iceiis24" element={<RecentConferenceLayout />} />
           <Route path="/icaids-2024" element={<RecentConferenceLayout />} />
           <Route path="/icaest-2026" element={<RecentConferenceLayout />} />
-          <Route path="/icqadts-2026" element={<RecentConferenceLayout />} />
 
           {/* Upcoming conference pages */}
-          <Route path="/upcomming-confernces" element={<UpcomingConferences />} />
+
           <Route path="/icaist-26" element={<UpcomingConferenceLayout />} />
           <Route path="/icqadts-2026" element={<UpcomingConferenceLayout />} />
           <Route path="/icmref-26" element={<UpcomingConferenceLayout />} />
@@ -101,8 +131,11 @@ const App = () => (
           <Route path="/apply-for-the-advisory-team" element={<AdvisoryTeam />} />
           <Route path="/apply-advisory-team" element={<AdvisoryTeam />} />
           <Route path="/article-submissions" element={<ArticleSubmissions />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="*" element={<NotFound />} />
+          <Route path="/conference/*" element={<ClonedWildcard />} />
+          <Route path="/month/*" element={<ClonedWildcard />} />
+          <Route path="/con/*" element={<ClonedWildcard />} />
+          <Route path="/preview" element={<ClonedPreview />} />
+          <Route path="*" element={<ClonedWildcard />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>

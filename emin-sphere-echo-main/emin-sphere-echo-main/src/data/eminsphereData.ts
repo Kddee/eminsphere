@@ -15,8 +15,11 @@ export interface ConferenceData {
   date: string;
   location: string;
   description: string;
+  collaboration?: string;
   thematicTracks?: string[];
   milestones?: { name: string; date: string; }[];
+  speakers?: { name: string; designation: string; university: string; image: string; }[];
+  patron?: { name: string; role: string; description: string; organization: string; location: string; image: string; };
 }
 
 export interface ProceedingData {
@@ -69,10 +72,11 @@ export const upcomingConferences: Record<string, ConferenceData> = {
   },
   "icmref-26": {
     id: "icmref-26",
-    title: "ICMREF-26",
+    title: "International Conference on Multidisciplinary Research & Emerging Frontiers in AI, Software Systems & Emerging Technologies (ICMREF-26)",
     date: "7 June 2026",
     location: "Hybrid Mode | Nairobi, Kenya",
-    description: "A global platform for researchers and industry professionals to explore multidisciplinary innovations in AI, Software Systems, and emerging technologies. It fosters collaboration across computing, engineering, healthcare, and business. All submissions undergo a double-blind peer-review process, offering ISBN Proceedings and recommendations for Scopus/WoS indexed journals.",
+    collaboration: "IMFC KENYA",
+    description: "ICMREF-26 is an international academic forum dedicated to advancing multidisciplinary research across emerging domains in Artificial Intelligence, Software Systems, and Advanced Technologies. The conference aims to provide a structured platform for researchers, academicians, and industry professionals to present original contributions, exchange technical insights, and explore collaborative opportunities.",
     thematicTracks: [
       "Artificial Intelligence & Machine Learning (Deep learning, NLP)",
       "Software Engineering & Systems (Modern architectures, DevOps)",
@@ -85,7 +89,36 @@ export const upcomingConferences: Record<string, ConferenceData> = {
       { name: "Paper Submission", date: "1 June 2026" },
       { name: "Acceptance Notification", date: "5 June 2026" },
       { name: "Final Submission", date: "6 June 2026" }
-    ]
+    ],
+    speakers: [
+      { name: "Dr. Ayoub Regragui", designation: "Technical Program Committee", university: "Mohammed V University, Morocco", image: "https://static.wixstatic.com/media/30814e_01571faffb8f491e9d9719a975bdbc88~mv2.avif" },
+      { name: "Dr. Marek Wasiluk", designation: "Clinical Research Expert", university: "", image: "https://static.wixstatic.com/media/30814e_adff5072ac724ad69a6f9634c9d672e0~mv2.jpg" },
+      { name: "Hicham El Khodja", designation: "Researcher, Morocco", university: "", image: "https://static.wixstatic.com/media/30814e_d1c8c65f9d4d4bd59632c05aa894aa71~mv2.jpeg" },
+      { name: "Prof. Dr. Alexander Bull", designation: "Germany", university: "", image: "https://static.wixstatic.com/media/30814e_add55fc0895a4b0b9aebdd381f822484~mv2.jpeg" },
+      { name: "Kateryna Antosz", designation: "Poland", university: "", image: "https://static.wixstatic.com/media/30814e_36d2bb3012e64343a18002662ca61e6b~mv2.avif" },
+      { name: "Dr. Aida Mehrad", designation: "C3S Business School", university: "", image: "https://static.wixstatic.com/media/502b14_2f32591e100346daa035a4aaf27ef7d7~mv2.jpeg" },
+      { name: "Dr. Mehwish Rashid", designation: "Keiser University, USA", university: "", image: "https://static.wixstatic.com/media/30814e_d030e1dbf7ef4028909beba2b99a69be~mv2.jpeg" },
+      { name: "Nadine Zeinoun", designation: "ICF Ottawa", university: "", image: "https://static.wixstatic.com/media/30814e_332bdfce1cc5480f975812b50be780a8~mv2.jpeg" },
+      { name: "Ezinne Esther Arisa", designation: "South Africa", university: "", image: "https://static.wixstatic.com/media/502b14_3adc2682f9064817b4728eca9cd4a0b1~mv2.jpeg" },
+      { name: "Dr. Zoha Rahman", designation: "USA", university: "", image: "https://static.wixstatic.com/media/30814e_2a893f0530e74f178c18e5939b687048~mv2.jpg" },
+      { name: "Dr. Dina A. Alkhodary", designation: "Jordan", university: "", image: "https://static.wixstatic.com/media/30814e_1feb45bda81f4dcdb4b55439a6f8d65a~mv2.jpg" },
+      { name: "Dr. Firas Zeidan", designation: "Lebanon", university: "", image: "https://static.wixstatic.com/media/30814e_571b3e70d8ff476f8b1272ef84538d8f~mv2.jpeg" },
+      { name: "Dr. Walida Ounruean", designation: "Thailand", university: "", image: "https://static.wixstatic.com/media/30814e_ac6c40d612254293a4f1f4479dfd7b61~mv2.avif" },
+      { name: "Dr. Tiansheng Yang", designation: "UK", university: "", image: "https://static.wixstatic.com/media/30814e_3a6549a4d2904005a224db41ca5f9cd0~mv2.avif" },
+      { name: "Mouhsine Ait El Mouden", designation: "Morocco", university: "", image: "https://static.wixstatic.com/media/30814e_b0c50d221b41483fa5ab8bfb50f719e5~mv2.avif" },
+      { name: "Sam Lawe", designation: "New Zealand", university: "", image: "https://static.wixstatic.com/media/30814e_485133b243e34681b345c2286ad708b2~mv2.jpeg" },
+      { name: "Meryem Gurel", designation: "Turkey", university: "", image: "https://static.wixstatic.com/media/30814e_6346862f510f41209c68b590a9da5215~mv2.jpeg" },
+      { name: "Dr. Ruth Abiola Adimula", designation: "Nigeria", university: "", image: "https://static.wixstatic.com/media/30814e_d096ce6ec8ff4b05a2cc1c7db574278b~mv2.jpeg" },
+      { name: "Emem Akpabio", designation: "South Africa", university: "", image: "https://static.wixstatic.com/media/30814e_2dad2d939abb4236bcb405093be55872~mv2.jpg" }
+    ],
+    patron: {
+      name: "Lawrence Mazaki Mashati",
+      role: "Conference Patron",
+      description: "Community Development Professional",
+      organization: "International Missionary for Christ Kenya (IMFC)",
+      location: "Nairobi, Kenya 🇰🇪",
+      image: "https://static.wixstatic.com/media/30814e_86a164138da142578e674588143e3af3~mv2.jpeg"
+    }
   },
   "icaits-26": {
     id: "icaits-26",
